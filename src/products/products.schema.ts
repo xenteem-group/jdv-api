@@ -18,16 +18,16 @@ export class Product {
     @Prop({ required: true })
     name: string;
 
-    @Prop()
-    description: string;
+    @Prop({ required: true })
+    quantity: number;
 
     @Prop({ required: true })
+    description: string;
+
+    @Prop()
     color: string;
 
-    @Prop()
-    origin: string;
-
-    @Prop()
+    @Prop({ required: true })
     price: number;
 
     @Prop({ type: [{ type: Types.ObjectId, ref: Media.name }] })
