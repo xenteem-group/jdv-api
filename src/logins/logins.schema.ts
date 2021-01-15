@@ -1,6 +1,6 @@
 import { Prop, raw, Schema, SchemaFactory } from "@nestjs/mongoose";
 import { Document, Types } from "mongoose";
-import { User } from "src/admin/admin.schema";
+import { User } from "src/users/users.schema";
 
 export type LoginDocument = Login & Document;
 
@@ -31,7 +31,6 @@ export class Login {
 
     @Prop()
     loggedOutAt: Date;
-
 
 }
 

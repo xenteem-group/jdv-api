@@ -1,6 +1,5 @@
 import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
 import { Document, Types } from "mongoose";
-import { Media } from "src/medias/medias.schema";
 
 export type UserDocument = User & Document;
 
@@ -34,7 +33,7 @@ export class User {
     @Prop({ required: true, trim: true,})
     district: string;
 
-    @Prop({ type: Types.ObjectId, ref: Media.name })
+    @Prop()
     image: string;
 
     @Prop({ default: false })

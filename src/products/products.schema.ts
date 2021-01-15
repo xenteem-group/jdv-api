@@ -1,12 +1,10 @@
 import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
-import { Document, Types } from "mongoose";
-import { Category } from "src/categories/categories.schema";
-import { Media } from "src/medias/medias.schema";
+import { Document } from "mongoose";
 
 
 export type ProductDocument = Product & Document;
 
-@Schema({ timestamps: {createdAt: 'created', updatedAt: 'updated'} })
+@Schema({ timestamps: true })
 export class Product {
 
     @Prop({ required: true, unique: true })
@@ -16,19 +14,22 @@ export class Product {
     name: string;
 
     @Prop({ required: true })
-    quantity: number;
-
-    @Prop({ required: true })
     description: string;
-
-    @Prop()
-    color: string;
 
     @Prop({ required: true })
     price: number;
 
-    @Prop({ type: [{ type: Types.ObjectId, ref: Media.name }] })
-    media: string[];
+    @Prop({ required: true })
+    qty: number;
+
+    @Prop([String])
+    tags: string[];
+
+    @Prop({ type: [String], required: true })
+    images: string[];
+
+    @Prop({ required: true, default: false })
+    published: boolean;
 
     @Prop({ required: true, default: false })
     deleted: boolean;

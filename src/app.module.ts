@@ -10,6 +10,9 @@ import { MediasModule } from './medias/medias.module';
 import { LoginsModule } from './logins/logins.module';
 import * as mongoose from 'mongoose';
 import { MulterModule } from '@nestjs/platform-express';
+import { OrdersModule } from './orders/orders.module';
+import { OrderDetailsModule } from './order-details/order-details.module';
+import { PaymentModule } from './payment/payment.module';
 import config from './config/keys';
 
 
@@ -28,6 +31,9 @@ mongoose.set('useCreateIndex', true);
     MediasModule,
     AdminModule,
     ProductsModule,
+    OrdersModule,
+    OrderDetailsModule,
+    PaymentModule,
   ],
   controllers: [AppController],
   providers: [AppService],
