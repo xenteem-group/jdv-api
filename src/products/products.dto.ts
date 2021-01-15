@@ -2,7 +2,6 @@ import { Types } from "mongoose";
 
 export class ProductDto {
     readonly code: string;
-    readonly category: Types.ObjectId;
     readonly name: string;
     readonly quantity: number;
     readonly price: number;

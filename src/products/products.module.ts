@@ -9,4 +9,4 @@ import { Product, ProductSchema } from './products.schema';
   providers: [ProductsService],
   controllers: [ProductsController]
 })
-export class GemsModule {}
+export class ProductsModule {}

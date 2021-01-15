@@ -12,9 +12,6 @@ export class Product {
     @Prop({ required: true, unique: true })
     code: string;
 
-    @Prop({ type: Types.ObjectId, ref: Category.name, required: true })
-    category: Category;
-
     @Prop({ required: true })
     name: string;
 

@@ -8,19 +8,34 @@ export type UserDocument = User & Document;
 export class User {
 
     @Prop({ required: true, trim: true })
-    name: string;
+    firstName: string;
 
-    @Prop({ required: true, unique: true })
-    username: string;
+    @Prop({ trim: true })
+    middleName: string;
+
+    @Prop({ required: true, trim: true })
+    lastName: string;
+
+    @Prop({ required: true, trim: true, unique:true })
+    email: string;
 
     @Prop({ required: true, minlength: 6 })
     password: string;
 
+    @Prop({ required: true, trim: true, unique:true })
+    mobileNo: string;
+
+    @Prop({ required: true, trim: true,})
+    address1: string;
+
+    @Prop({ required: true, trim: true,})
+    address2: string;
+
+    @Prop({ required: true, trim: true,})
+    district: string;
+
     @Prop({ type: Types.ObjectId, ref: Media.name })
     image: string;
-
-    @Prop({ required: true, enum: [ 'admin', 'user' ] })
-    role: string;
 
     @Prop({ default: false })
     deleted: boolean;
